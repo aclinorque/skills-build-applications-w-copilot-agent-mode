@@ -16,6 +16,107 @@
     outline-offset: 2px;
   }
 }
+.app-shell {
+  min-height: 100vh;
+  background:
+    linear-gradient(90deg, rgba(36, 129, 114, 0.05) 1px, transparent 1px),
+    #f7f8f5;
+  background-size: 24px 24px;
+}
+
+.brand {
+  color: #163f3a;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.brand img {
+  object-fit: contain;
+}
+
+.nav-pills .nav-link {
+  border-radius: 4px;
+  color: #33534e;
+  font-size: 0.95rem;
+}
+
+.nav-pills .nav-link.active {
+  background: #1a6d61;
+  color: #fff;
+}
+
+.page-heading {
+  border-bottom: 2px solid #cbd9d3;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+}
+
+.page-heading h1 {
+  color: #163f3a;
+  font-family: Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 700;
+  margin: 0;
+}
+
+.eyebrow {
+  color: #b44b1d;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+}
+
+.table {
+  --bs-table-bg: #fff;
+  --bs-table-striped-bg: #eef5f1;
+  border: 1px solid #d6e0dc;
+  margin-bottom: 0;
+}
+
+.table thead th {
+  background: #163f3a;
+  color: #fff;
+  font-size: 0.78rem;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.stat-card {
+  background: #fff;
+  border: 1px solid #d6e0dc;
+  border-radius: 6px;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.stat-card h2 {
+  color: #163f3a;
+  font-family: Georgia, serif;
+  font-size: 1.45rem;
+  margin: 0 0 0.75rem;
+}
+
+.rank {
+  color: #b44b1d;
+  display: block;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.points {
+  color: #1a6d61;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 575px) {
+  .nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+}
 
 .hero {
   position: relative;

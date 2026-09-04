@@ -66,6 +66,16 @@ body {
   box-sizing: border-box;
 }
 
+#root {
+  border: 0;
+  display: block;
+  margin: 0;
+  max-width: none;
+  min-height: 100vh;
+  text-align: left;
+  width: 100%;
+}
+
 h1,
 h2 {
   font-family: var(--heading);
@@ -108,4 +118,11 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
 }

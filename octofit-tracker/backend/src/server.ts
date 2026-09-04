@@ -1,3 +1,4 @@
+import cors from 'cors';
 import express from 'express';
 import './config/database.js';
 import { Activity } from './models/Activity.js';
@@ -13,7 +14,8 @@ const baseUrl = codespaceName
   ? `https://${codespaceName}-8000.app.github.dev`
   : `http://localhost:${port}`;
 
-app.use(express.json()); 
+app.use(cors());
+app.use(express.json());
 
 app.get('/api/health', (_request, response) => {
   response.json({ status: 'ok', baseUrl });

@@ -21,7 +21,7 @@ app.get('/api/health', (_request, response) => {
   response.json({ status: 'ok', baseUrl });
 });
 
-app.get('/api/users/', async (_request, response, next) => {
+app.get('/api/users/', async (_request, response, next) => { 
   try {
     const users = await User.find().sort({ displayName: 1 });
     response.json(users);

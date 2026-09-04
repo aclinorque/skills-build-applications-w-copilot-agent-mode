@@ -19,7 +19,7 @@ function toRecords(payload) {
   return []
 }
 
-export function useApiCollection(resource) {
+export function useApiCollection(endpoint) {
   const [state, setState] = useState({ records: [], loading: true, error: '' })
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export function useApiCollection(resource) {
 
     async function loadCollection() {
       try {
-        const response = await fetch(getCollectionUrl(resource), { signal: controller.signal })
+        const response = await fetch(endpoint, { signal: controller.signal })
         if (!response.ok) throw new Error(`Request failed with ${response.status}`)
         const payload = await response.json()
         setState({ records: toRecords(payload), loading: false, error: '' })
@@ -40,7 +40,7 @@ export function useApiCollection(resource) {
 
     loadCollection()
     return () => controller.abort()
-  }, [resource])
+  }, [endpoint])
 
   return state
 }

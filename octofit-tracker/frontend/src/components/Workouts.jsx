@@ -1,7 +1,11 @@
-import { useApiCollection } from '../api.js'
+import { getCollectionUrl, useApiCollection } from '../api.js'
+
+const endpoint = import.meta.env.VITE_CODESPACE_NAME
+  ? `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/workouts/`
+  : getCollectionUrl('workouts')
 
 function Workouts() {
-  const { records, loading, error } = useApiCollection('workouts')
+  const { records, loading, error } = useApiCollection(endpoint)
 
   return (
     <section>

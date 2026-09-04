@@ -1,7 +1,11 @@
-import { useApiCollection } from '../api.js'
+import { getCollectionUrl, useApiCollection } from '../api.js'
+
+const endpoint = import.meta.env.VITE_CODESPACE_NAME
+  ? `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/leaderboard/`
+  : getCollectionUrl('leaderboard')
 
 function Leaderboard() {
-  const { records, loading, error } = useApiCollection('leaderboard')
+  const { records, loading, error } = useApiCollection(endpoint)
 
   return (
     <section>

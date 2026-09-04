@@ -1,7 +1,11 @@
-import { useApiCollection } from '../api.js'
+import { getCollectionUrl, useApiCollection } from '../api.js'
+
+const endpoint = import.meta.env.VITE_CODESPACE_NAME
+  ? `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/teams/`
+  : getCollectionUrl('teams')
 
 function Teams() {
-  const { records, loading, error } = useApiCollection('teams')
+  const { records, loading, error } = useApiCollection(endpoint)
 
   return (
     <section>
